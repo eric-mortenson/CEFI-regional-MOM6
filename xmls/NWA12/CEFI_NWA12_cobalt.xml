@@ -49,10 +49,10 @@ frecheck -r layout -p ncrc5.intel22 -x CEFI_NWA12_cobalt.xml CEFI_NWA12_COBALT_V
   <property name="NULL_TAG" value="2023.04"/>
 
   <!-- git tag for CEFI-regional-MOM6 source code -->
-  <property name="MOM6_GIT_FIX" value="main"/> <!-- Trying new branch with bug fix for bgc obc index -->
+  <property name="MOM6_GIT_FIX" value="feature/add_phtacc_MLD_wip"/> <!-- Trying new branch with bug fix for bgc obc index -->
 
   <!-- customize as needed -->
-  <property name="FRE_STEM" value="fre/cefi/NWA/2024_07"/>
+  <property name="FRE_STEM" value="fre/cefi/NWA/add_phtacc_MLD_wip"/>
 
   <!-- Please make sure to change your group, such as b, f, g, m, o... -->
   <property name="NCRC_GROUP" value="cefi"/>
@@ -582,7 +582,7 @@ cat > $work/INPUT/MOM_override << MOM_OVERRIDE_EOF
 #override USE_generic_tracer = True
 #override MAX_FIELDS=500
 #override OBC_TIDE_NODAL_REF_DATE = ${fyear},7,2
-DT_OBC_SEG_UPDATE_OBGC = 1800
+DT_OBC_SEG_UPDATE_OBGC = 3600
 #override CHL_FROM_FILE = False
 #override DO_GEOTHERMAL = True
 #override GENERIC_TRACER_IC_FILE = "NWA12_COBALT_2023_10_spinup_2003.nc"
@@ -591,6 +591,10 @@ DT_OBC_SEG_UPDATE_OBGC = 1800
 #override REMAP_AUXILIARY_VARS = True
 #override DIABATIC_FIRST = False
 #override EQN_OF_STATE = "WRIGHT_FULL"
+#override PHA_MLD_FIXED = False
+#override PHA_MLD_USE_DELTA_RHO = True
+#override PHA_MLD_HREF = 10.0
+#override PHA_MLD_DRHO = 0.03
 MOM_OVERRIDE_EOF
 
 truncate -s 0 $work/INPUT/COBALT_override
