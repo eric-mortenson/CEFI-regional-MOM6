@@ -612,6 +612,9 @@ truncate -s 0 $work/INPUT/COBALT_input
 cat > $work/INPUT/COBALT_input << COBALT_INPUT_EOF
 ! Put the contents of your COBALT_input file here
 do_case2_mod = True		      
+scale_burial = 1.0
+z_burial = 20.0
+z_denit = 20.0		      
 COBALT_INPUT_EOF
         ]]>
       </csh>
@@ -620,8 +623,8 @@ COBALT_INPUT_EOF
       <production simTime="$(PROD_SIMTIME)" units="years">
         <segment simTime="12" units="months"/>
         <resources jobWallclock="08:00:00" segRuntime="08:00:00">
-          <ice                          layout = "50,50" io_layout = "1,1" mask_table="mask_table.854.50x50"/>
-          <ocn ranks="1646" threads="1" layout = "50,50" io_layout = "1,1" mask_table="mask_table.854.50x50"/>
+          <ice                          layout = "70,70" io_layout = "1,1" mask_table="mask_table.1739.70x70"/>
+          <ocn ranks="3161" threads="1" layout = "70,70" io_layout = "1,1" mask_table="mask_table.1739.70x70"/>
         </resources>
       </production>
       <regression name="test">
