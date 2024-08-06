@@ -52,7 +52,7 @@ frecheck -r layout -p ncrc5.intel22 -x CEFI_NWA12_cobalt.xml CEFI_NWA12_COBALT_V
   <property name="MOM6_GIT_FIX" value="feature/add_phtacc_MLD_wip"/> <!-- Trying new branch with bug fix for bgc obc index -->
 
   <!-- customize as needed -->
-  <property name="FRE_STEM" value="fre/cefi/NWA/add_phtacc_MLD_wip"/>
+  <property name="FRE_STEM" value="fre/cefi/NWA/add_phtacc_MLD"/>
 
   <!-- Please make sure to change your group, such as b, f, g, m, o... -->
   <property name="NCRC_GROUP" value="cefi"/>
